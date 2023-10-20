@@ -4308,13 +4308,14 @@
             var el = document.getElementsByClassName("cart-btn");
             for (let i=0; i < el.length; i++) {
                 
+                
                 el[i].addEventListener("click", function () {
                 gtag("event", "purchase", {
                         // This purchase event uses a different transaction ID
                         // from the previous purchase event so Analytics
                         // doesn't deduplicate the events.
                         // Learn more: https://support.google.com/analytics/answer/12313109
-                        transaction_id: "T_12345_2",
+                        transaction_id: new Date().getUTCMilliseconds(),
                         value: 25.42,
                         tax: 4.90,
                         shipping: 5.99,
